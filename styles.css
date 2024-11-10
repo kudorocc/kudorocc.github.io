@@ -1,0 +1,170 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background:
+  /* radial-gradient(
+      circle at center top,
+      rgba(255, 255, 255, 0.2),
+      transparent 30%
+    ), */ radial-gradient(
+    circle at top,
+    #111136,
+    #000000
+  );
+  background-attachment: fixed;
+  height: 100vh;
+  color: #ffffff; /* Golden color */
+  margin: 0;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.logo {
+  width: 50%;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 200;
+  color: #ffffff;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #e6c670;
+  font-weight: bold;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e6c670;
+  border-radius: 5px;
+  background-color: #0e2b4a;
+  color: #000000;
+}
+
+button {
+  padding: 10px;
+  background-color: #ffbf10;
+  color: #0a1a2f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #d4b256;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  a {
+    img {
+      width: 60px;
+    }
+  }
+}
+
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+#app-stores {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+#app-stores h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#app-stores p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.app-store-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.app-store-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.app-store-icon {
+  height: 100px; /* Adjust the size of the icons */
+  width: auto;
+  margin-bottom: 10px;
+  opacity: 0.2;
+}
+
+.app-store-item p {
+  color: #e6c670;
+  font-weight: bold;
+}
+
+.powered-by-strava {
+  width: 10%;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+.formkit-form[data-uid="20d891abaa"][min-width~="800"] [data-style="clean"] {
+  padding: 10px;
+  padding-top: 10px !important;
+}
