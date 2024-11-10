@@ -40,13 +40,6 @@ h1 {
   color: #ffffff;
 }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #e6c670;
-  font-weight: bold;
-}
-
 section {
   display: flex;
   flex-direction: column;
@@ -54,36 +47,6 @@ section {
   align-items: center;
   padding: 10px 20px;
   margin: 20px 0;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-input[type="email"] {
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #e6c670;
-  border-radius: 5px;
-  background-color: #0e2b4a;
-  color: #000000;
-}
-
-button {
-  padding: 10px;
-  background-color: #ffbf10;
-  color: #0a1a2f;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: #d4b256;
 }
 
 footer {
@@ -110,10 +73,12 @@ footer {
 
 a {
   color: #ffffff;
+  transition: transform 0.3s ease;
 }
 
 a:hover {
   color: #ffffff;
+  transform: scale(1.1);
 }
 
 #app-stores {
@@ -162,6 +127,21 @@ a:hover {
   position: absolute;
   top: 50px;
   right: 50px;
+  transition: transform 0.3s ease;
+}
+
+.powered-by-strava:hover {
+  transform: scale(1.05);
+}
+
+input,
+button {
+  transition: transform 0.3s ease;
+}
+
+input:hover,
+button:hover {
+  transform: scale(1.02);
 }
 
 .formkit-form[data-uid="20d891abaa"][min-width~="800"] [data-style="clean"] {
