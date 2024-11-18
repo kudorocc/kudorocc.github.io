@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kudoro - Transform Your Adventures</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -11,124 +12,179 @@
     />
   </head>
   <body>
-    <div class="golden-shimmer"></div>
-
-    <section id="home">
-      <div class="powered-by-strava">
-        <a href="https://www.strava.com/" target="_blank">
+    <div class="container">
+      <section id="home">
+        <div class="top-left">
           <img
-            src="assets/images/api_logo_pwrdBy_strava_stack_white.svg"
-            alt="Powered by Strava"
+            class="kudoro-logo"
+            src="assets/images/kudoro-title.svg"
+            alt="Kudoro"
           />
-        </a>
-      </div>
-      <div class="sparkle-button">
-        <button
-          class="secure-signup-button"
-          onclick="window.location.href = '#signup'"
-        >
-          Secure free Premium
-        </button>
-      </div>
+          <div class="sparkle-button shimmer">
+            <button
+              class="secure-signup-button"
+              onclick="window.location.href = '#signup'"
+            >
+              Secure free Pro
+            </button>
+          </div>
+        </div>
 
-      <img class="logo" src="assets/images/KUDORO.svg" alt="Kudoro" />
-      <h1>Celebrate your accomplishments with the world</h1>
-    </section>
+        <div class="powered-by-strava">
+          <a href="https://www.strava.com/" target="_blank">
+            <img
+              src="assets/images/api_logo_pwrdBy_strava_stack_white.svg"
+              alt="Powered by Strava"
+            />
+          </a>
+        </div>
+      </section>
 
-    <section id="examples">
-      <div class="vision">
+      <section id="hero">
+        <div class="hero-text">
+          <h1 class="statement">
+            Transform your workouts into stunning visual stories
+          </h1>
+        </div>
+      </section>
+
+      <section id="examples">
         <div class="carousel">
-          <div class="card">
-            <img src="assets/images/exampleImage1.png" alt="Image 1" />
+          <div class="card" onclick="expandItem(this)">
+            <img src="assets/images/example1.png" alt="Image 1" />
           </div>
-          <div class="card">
-            <img src="assets/images/exampleImage2.png" alt="Image 2" />
+          <div class="card" onclick="expandItem(this)">
+            <video autoplay loop muted>
+              <source src="assets/images/example2.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div class="card">
-            <img src="assets/images/exampleImage3.png" alt="Image 3" />
+          <div class="card" onclick="expandItem(this)">
+            <img src="assets/images/example3.png" alt="Image 3" />
           </div>
-          <div class="card">
-            <img src="assets/images/exampleImage4.png" alt="Image 4" />
+          <div class="card" onclick="expandItem(this)">
+            <img src="assets/images/example4.png" alt="Image 4" />
           </div>
         </div>
+        <div class="expanded-view" id="expandedView"></div>
+      </section>
+
+      <section id="vision">
         <div class="vision-statement">
-          <h1>
-            Transform your achievements and experiences into engaging visual
-            stories.
-          </h1>
-          <h1>
-            Whether you want to amplify your videos with activity data or bring
-            your activities to life with the perfect shot—Kudoro is your
-            one-stop app. Crafted by Kudoro, powered by Strava, and
-            individualized by you. Our seamless integration makes it easy.
-          </h1>
+          <ul>
+            <li>
+              <div>✨</div>
+              <div>
+                Create beautiful posts about your workouts with Kudoro summary
+                and live overlays
+              </div>
+            </li>
+            <li>
+              <div>🎥</div>
+              <div>Use videos from any phone or action cam</div>
+            </li>
+            <li>
+              <div>📱</div>
+              <div>All on your phone - no other tools needed</div>
+            </li>
+            <li>
+              <div>🍯</div>
+              <div>Seamless Strava integrated (not affiliated)</div>
+            </li>
+            <li>
+              <div>👶</div>
+              <div>Anyone can do it</div>
+            </li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- <section id="faq">
-      <h2>FAQ</h2>
-      <div class="faq-item">
-        <h3>What is Kudoro?</h3>
-        <p></p>
-      </div>
-    </section> -->
-
-    <section id="signup">
-      <h1>Join the Waitlist</h1>
-      <h2>to test all Premium features for <b>free</b> when Kudoro is out</h2>
-      <div class="shimmer-box">
-        <script
-          async
-          data-uid="20d891abaa"
-          src="https://kudoro.kit.com/20d891abaa/index.js"
-        ></script>
-        <script>
-          window.addEventListener("load", function () {
-            var buildWithKitElement = document.querySelector(
-              ".formkit-powered-by-convertkit-container a"
-            );
-            if (buildWithKitElement) {
-              buildWithKitElement.setAttribute("data-variant", "light");
-            }
-          });
-        </script>
-      </div>
-    </section>
-
-    <section id="#app-stores">
-      <h1>Coming to app stores soon...</h1>
-      <div class="app-store-links">
-        <div class="app-store-item ios">
-          <img
-            src="https://developer.apple.com/assets/elements/icons/download-on-the-app-store/download-on-the-app-store.svg"
-            alt="App Store"
-            class="app-store-icon"
-          />
+      <section id="signup">
+        <h1>Join the Waitlist</h1>
+        <p>and test all <b>Pro</b> features for <b>free</b> on release</p>
+        <div class="convert-kit-container shimmer">
+          <script
+            async
+            data-uid="20d891abaa"
+            src="https://kudoro.kit.com/20d891abaa/index.js"
+          ></script>
+          <script>
+            window.addEventListener("load", function () {
+              var buildWithKitElement = document.querySelector(
+                ".formkit-powered-by-convertkit-container a"
+              );
+              if (buildWithKitElement) {
+                buildWithKitElement.setAttribute("data-variant", "light");
+              }
+            });
+          </script>
         </div>
-        <div class="app-store-item android">
-          <img
-            src="assets/images/GetItOnGooglePlay_Badge_Web_color_English.png"
-            alt="Google Play"
-            class="app-store-icon"
-          />
+      </section>
+
+      <section id="#app-stores">
+        <h1>Coming to app stores soon...</h1>
+        <div class="app-stores">
+          <div class="app-store-item">
+            <img
+              src="https://developer.apple.com/assets/elements/icons/download-on-the-app-store/download-on-the-app-store.svg"
+              alt="App Store"
+              class="app-store-icon"
+            />
+          </div>
+          <div class="app-store-item">
+            <img
+              src="assets/images/GetItOnGooglePlay_Badge_Web_color_English.png"
+              alt="Google Play"
+              class="app-store-icon"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <footer>
       <div class="socials">
         <a href="https://instagram.com/kudoro.cc" target="_blank"
           ><img src="assets/icons/instagram.svg" alt="instagram"
         /></a>
-        <a href="https://tiktok.com/kudoro.cc" target="_blank"
+        <a href="https://tiktok.com/@kudoro.cc" target="_blank"
           ><img src="assets/icons/tiktok.svg" alt="tiktok"
         /></a>
-        <a href="https://youtube.com/kudoro-cc" target="_blank"
+        <a href="https://youtube.com/@kudoro-cc" target="_blank"
           ><img src="assets/icons/youtube.svg" alt="youtube"
         /></a>
       </div>
-      <a href="mailto:kudoro.cc@gmail.com">Contact</a>
+      <div class="footer-links">
+        <a href="mailto:kudoro.cc@gmail.com">Contact</a>
+        <a href="impressum.html">Impressum</a>
+      </div>
+      <div class="golden-shimmer"></div>
     </footer>
+
+    <script>
+      function expandItem(element) {
+        if (window.innerWidth <= 768) {
+          // Only for mobile view
+          const expandedView = document.getElementById("expandedView");
+
+          // Clear any existing content in the expanded view
+          expandedView.innerHTML = "";
+
+          // Clone the element to retain its original in the container
+          const clone = element.cloneNode(true);
+
+          // Append the clone to the expanded view
+          expandedView.appendChild(clone);
+
+          // Show the expanded view
+          expandedView.style.display = "flex";
+
+          // Hide the expanded view when clicked
+          expandedView.onclick = function () {
+            expandedView.style.display = "none";
+            expandedView.innerHTML = ""; // Clean up to prevent duplicate content
+          };
+        }
+      }
+    </script>
   </body>
 </html>
