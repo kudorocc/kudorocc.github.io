@@ -163,13 +163,13 @@ button:hover {
   }
 
   .kudoro-logo {
-    width: 300px;
+    width: 250px;
     max-width: 100%;
   }
 
   .powered-by-strava {
-    width: 200px;
-    max-width: 40%;
+    width: 150px;
+    max-width: 30%;
     transition: transform 0.3s ease;
   }
 
