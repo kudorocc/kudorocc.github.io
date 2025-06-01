@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kudoro.cc/sitemap.xml 
