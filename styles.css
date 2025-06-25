@@ -73,6 +73,23 @@ p {
   gap: 20px;
 }
 
+.privacy-policy {
+  margin: auto;
+  max-width: 800px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    text-align: left;
+  }
+}
+
+.privacy-policy-date {
+  text-align: center !important;
+}
+
 footer {
   width: 100vw;
   display: flex;
@@ -292,7 +309,7 @@ button:hover {
   pointer-events: none;
 }
 
-ul {
+.statement-ul {
   padding: 20px;
   align-self: center;
   max-width: 700px;
@@ -301,7 +318,7 @@ ul {
   gap: 15px;
 }
 
-li {
+.statement-ul li {
   display: flex;
   gap: 15px;
   list-style: none;
