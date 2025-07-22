@@ -164,28 +164,6 @@ a:hover {
   height: 70px;
 }
 
-.app-store-icon.coming-soon {
-  opacity: 0.2;
-}
-
-.app-store-container {
-  position: relative;
-  display: inline-block;
-}
-
-.coming-soon-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.1em;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.95);
-  text-align: center;
-  pointer-events: none;
-  z-index: 10;
-}
-
 input,
 button {
   transition: transform 0.3s ease;
