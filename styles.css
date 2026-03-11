@@ -364,6 +364,146 @@ button:hover {
   font-weight: 600;
 }
 
+.hero-subtitle {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
+  max-width: 700px;
+}
+
+.plans-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.plan-card {
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.02) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.plan-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.plan-card h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.plan-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  margin: 4px 0;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1.05em;
+  text-align: left;
+}
+
+.plan-card li {
+  line-height: 1.4;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 600;
+}
+
+.plan-emoji {
+  flex-shrink: 0;
+  font-size: 1.3em;
+  margin-top: 0;
+}
+
+.plan-card-pro {
+  border-color: rgba(255, 215, 0, 0.3);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(255, 180, 0, 0.04) 30%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 215, 0, 0.15),
+    inset 0 1px 0 rgba(255, 215, 0, 0.1);
+}
+
+.plan-card-pro:hover {
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(255, 215, 0, 0.08),
+    0 0 0 1px rgba(255, 215, 0, 0.25),
+    inset 0 1px 0 rgba(255, 215, 0, 0.12);
+}
+
+.plan-card-pro h3 {
+  background: linear-gradient(135deg, #ffd700, #ffecb3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.plan-card-pro .plan-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 215, 0, 0.25),
+    transparent
+  );
+}
+
 
 
 /* Small screens - stack app store buttons */
@@ -427,5 +567,14 @@ button:hover {
 
   footer {
     margin-top: 60px;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
+  .plan-card {
+    padding: 28px 24px;
   }
 }
