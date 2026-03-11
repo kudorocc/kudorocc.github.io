@@ -129,16 +129,36 @@
 
       <section id="examples">
         <div class="carousel">
-          <div class="card" onclick="expandItem(this)">
+          <div
+            class="card"
+            onclick="expandItem(this)"
+            data-video="assets/images/example1.mp4"
+            tabindex="0"
+          >
             <img src="assets/images/example1.png" alt="Image 1" />
           </div>
-          <div class="card" onclick="expandItem(this)">
+          <div
+            class="card"
+            onclick="expandItem(this)"
+            data-video="assets/images/example2.mp4"
+            tabindex="0"
+          >
             <img src="assets/images/example2.png" alt="Image 2" />
           </div>
-          <div class="card" onclick="expandItem(this)">
+          <div
+            class="card"
+            onclick="expandItem(this)"
+            data-video="assets/images/example3.mp4"
+            tabindex="0"
+          >
             <img src="assets/images/example3.png" alt="Image 3" />
           </div>
-          <div class="card" onclick="expandItem(this)">
+          <div
+            class="card"
+            onclick="expandItem(this)"
+            data-video="assets/images/example4.mp4"
+            tabindex="0"
+          >
             <img src="assets/images/example4.png" alt="Image 4" />
           </div>
         </div>
@@ -211,6 +231,20 @@
           // Append the clone to the expanded view
           expandedView.appendChild(clone);
 
+          // If the cloned card contains a video, start playing it
+          const clonedVideo = clone.querySelector("video");
+          if (clonedVideo) {
+            clonedVideo.muted = true;
+            clonedVideo.loop = true;
+            clonedVideo.playsInline = true;
+            const playPromise = clonedVideo.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+              playPromise.catch(() => {
+                // Ignore autoplay restrictions
+              });
+            }
+          }
+
           // Show the expanded view
           expandedView.style.display = "flex";
 
@@ -221,6 +255,50 @@
           };
         }
       }
+    </script>
+    <script>
+      // Swap example images with looping videos on hover/focus
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card[data-video]");
+
+        cards.forEach((card) => {
+          const img = card.querySelector("img");
+          const videoSrc = card.getAttribute("data-video");
+          if (!img || !videoSrc) return;
+
+          const video = document.createElement("video");
+          video.src = videoSrc;
+          video.loop = true;
+          video.muted = true;
+          video.playsInline = true;
+          video.preload = "metadata";
+          video.style.display = "none";
+          card.appendChild(video);
+
+          const showVideo = () => {
+            img.style.display = "none";
+            video.style.display = "block";
+            const playPromise = video.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+              playPromise.catch(() => {
+                // Ignore autoplay restrictions
+              });
+            }
+          };
+
+          const showImage = () => {
+            video.pause();
+            video.currentTime = 0;
+            video.style.display = "none";
+            img.style.display = "block";
+          };
+
+          card.addEventListener("mouseenter", showVideo);
+          card.addEventListener("mouseleave", showImage);
+          card.addEventListener("focus", showVideo);
+          card.addEventListener("blur", showImage);
+        });
+      });
     </script>
     <script type="application/ld+json">
       {
