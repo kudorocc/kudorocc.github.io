@@ -326,22 +326,20 @@
         const cards = document.querySelectorAll(".card[data-video]");
 
         cards.forEach((card) => {
-          const img = card.querySelector("img");
           const videoSrc = card.getAttribute("data-video");
-          if (!img || !videoSrc) return;
+          if (!videoSrc) return;
 
           const video = document.createElement("video");
           video.src = videoSrc;
           video.loop = true;
           video.muted = true;
           video.playsInline = true;
-          video.preload = "metadata";
-          video.style.display = "none";
+          // Preload fully so the browser can buffer once and reuse
+          video.preload = "auto";
           card.appendChild(video);
 
           const showVideo = () => {
-            img.style.display = "none";
-            video.style.display = "block";
+            video.style.opacity = "1";
             const playPromise = video.play();
             if (playPromise && typeof playPromise.catch === "function") {
               playPromise.catch(() => {
@@ -351,10 +349,9 @@
           };
 
           const showImage = () => {
-            video.pause();
-            video.currentTime = 0;
-            video.style.display = "none";
-            img.style.display = "block";
+            // Keep the video playing/loaded in the background;
+            // just hide it visually to avoid re-downloads on every hover.
+            video.style.opacity = "0";
           };
 
           card.addEventListener("mouseenter", showVideo);
