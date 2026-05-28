@@ -91,20 +91,56 @@ body.page-impressum .impressum {
   gap: 20px;
 }
 
-.privacy-policy {
+.page-content {
   margin: auto;
   max-width: 800px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  p {
-    text-align: left;
-  }
+  text-align: left;
 }
 
-.privacy-policy-date {
+.page-content h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.page-content h2,
+.page-content h3,
+.page-content p,
+.page-content ul,
+.page-content ol {
+  text-align: left;
+  width: 100%;
+}
+
+.page-content ul,
+.page-content ol {
+  padding-left: 1.25rem;
+}
+
+.page-content ul li {
+  list-style: disc;
+}
+
+.page-content ol li {
+  list-style: decimal;
+}
+
+/* Don't inherit homepage section layout inside article pages */
+.page-content section {
+  display: block;
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  align-self: auto;
+  align-items: stretch;
+  gap: 0;
+  overflow: visible;
+}
+
+.page-content-date {
   text-align: center !important;
 }
 
@@ -573,7 +609,7 @@ button:hover {
     height: 50px;
   }
 
-  li {
+  .container li {
     list-style: none;
     font-size: 1em;
     font-weight: 600;
